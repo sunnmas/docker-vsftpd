@@ -42,7 +42,7 @@ echo "pasv_promiscuous=${PASV_PROMISCUOUS}" >> /etc/vsftpd/vsftpd.conf
 echo "port_promiscuous=${PORT_PROMISCUOUS}" >> /etc/vsftpd/vsftpd.conf
 
 # Add ssl options
-if [ "$SSL_ENABLE" = "YES" ]; then
+#if [ "$SSL_ENABLE" = "YES" ]; then
 	echo "ssl_enable=YES" >> /etc/vsftpd/vsftpd.conf
 	echo "allow_anon_ssl=NO" >> /etc/vsftpd/vsftpd.conf
 	echo "force_local_data_ssl=YES" >> /etc/vsftpd/vsftpd.conf
@@ -54,7 +54,7 @@ if [ "$SSL_ENABLE" = "YES" ]; then
 	echo "ssl_ciphers=HIGH" >> /etc/vsftpd/vsftpd.conf
 	echo "rsa_cert_file=/etc/vsftpd/cert/$TLS_CERT" >> /etc/vsftpd/vsftpd.conf
 	echo "rsa_private_key_file=/etc/vsftpd/cert/$TLS_KEY" >> /etc/vsftpd/vsftpd.conf
-fi
+#fi
 
 # Get log file path
 export LOG_FILE=`grep xferlog_file /etc/vsftpd/vsftpd.conf|cut -d= -f2`
